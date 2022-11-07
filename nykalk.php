@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="nykalk.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="topnav"></div>
@@ -18,7 +18,7 @@
             <option value="110">Nannestad</option>
         </select>
         <label for="distanse">Kjørelengde i meter</label>
-        <input type="text" name="distanse" class="distanse">
+        <input type="text" name="distanse" class="distanse" placeholder="0">
         <label for="m3">m3/daa</label>
         <select name="m3" id="m3">
             <option value="0">0</option>
@@ -40,7 +40,7 @@
             <option value="0">Tosidig</option>
         </select>
         <label for="underskog">Underskog</label>
-        <select name="" id="">
+        <select name="underskog" id="">
             <option value="0">0</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -74,21 +74,32 @@
     </form>
     <?php 
         $lokasjon = $_REQUEST['lokasjon'];
-        $distanse = ($_REQUEST['distanse'] * 5) / 200;
+        //check if $distanse has integer value
+        if (is_numeric($_REQUEST['distanse'])) {
+            $distanse = ($_REQUEST['distanse'] * 5) / 200;
+        } else {
+            $distanse = 0;
+        }
+        //$distanse = ($_REQUEST['distanse'] * 5) / 200;
         $m3 = $_REQUEST['m3'];
         $overflate = $_REQUEST['overflate'];
         $velteplass = $_REQUEST['velteplass'];
         $underskog = $_REQUEST['underskog'];
         $antSort = $_REQUEST['antSort'];
         $manuell = $_REQUEST['manuell'];
-        $annet = $_REQUEST['annet'];
+        if (is_numeric($_REQUEST['annet'])) {
+            $annet = $_REQUEST['annet'];
+        } else {
+            $annet = 0;
+        }
+        //$annet = $_REQUEST['annet'];
         
         $tillegg = $distanse + $m3 + $overflate + $velteplass + $underskog + $antSort + $manuell + $annet;
         $driftspris = $lokasjon + $tillegg;
     ?>
     <div class="priser">
         <?php
-            echo "Basispris: " . $lokasjon . " | Sum tillegg: " . $tillegg . " | Driftspris: " . $driftspris . "<br><br>";
+            echo "Basispris: $lokasjon | Sum tillegg: $tillegg | Driftspris: $driftspris <br><br>";
         ?>
     </div>
     <h2 style="text-align: center;">Kjørelengde i meter</h2>
@@ -108,7 +119,7 @@
         <th>>400</th>
         <?php
             for ($i=0; $i <= 6; $i++) { 
-                $tabellpris = $lokasjon + $i*2;
+                $tabellpris = $driftspris + $i*2;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -117,7 +128,7 @@
         <th>301-400</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*5;
+                $tabellpris = $driftspris + $i*5;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -126,7 +137,7 @@
         <th>201-300</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*6;
+                $tabellpris = $driftspris + $i*6;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -135,7 +146,7 @@
         <th>171-200</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*7;
+                $tabellpris = $driftspris + $i*7;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -144,7 +155,7 @@
         <th>161-170</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*8;
+                $tabellpris = $driftspris + $i*8;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -153,7 +164,7 @@
         <th>151-160</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*9;
+                $tabellpris = $driftspris + $i*9;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -162,7 +173,7 @@
         <th>141-150</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*10;
+                $tabellpris = $driftspris + $i*10;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>
@@ -171,7 +182,7 @@
         <th>Under 140</th>
         <?php
             for ($i=1; $i <= 7; $i++) { 
-                $tabellpris = $lokasjon + $i*11;
+                $tabellpris = $driftspris + $i*11;
                 echo "<td>" . $tabellpris . "</td>";
             }
         ?>

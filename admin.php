@@ -22,72 +22,7 @@
             <label for="sortiment">Antall sortiment:</label>
             <input type="text" name="sortiment">
         </div>
-        <div class="sted">
-            <h2>Hønefoss</h2>
-            <label for="m3">m3/daa:</label>
-            <input type="text" name="m3">
-            <label for="overflate">Overflate:</label>
-            <input type="text" name="overflate">
-            <label for="velteplass">Velteplass</label>
-            <input type="text" name="velteplass">
-            <label for="underskog">Underskog</label>
-            <input type="text" name="underskog">
-            <label for="sortiment">Antall sortiment:</label>
-            <input type="text" name="sortiment">
-        </div>
-        <div class="sted">
-            <h2>Askim</h2>
-            <label for="m3">m3/daa:</label>
-            <input type="text" name="m3">
-            <label for="overflate">Overflate:</label>
-            <input type="text" name="overflate">
-            <label for="velteplass">Velteplass</label>
-            <input type="text" name="velteplass">
-            <label for="underskog">Underskog</label>
-            <input type="text" name="underskog">
-            <label for="sortiment">Antall sortiment:</label>
-            <input type="text" name="sortiment">
-        </div>
-        <div class="sted">
-            <h2>Nannestad</h2>
-            <label for="m3">m3/daa:</label>
-            <input type="text" name="m3">
-            <label for="overflate">Overflate:</label>
-            <input type="text" name="overflate">
-            <label for="velteplass">Velteplass</label>
-            <input type="text" name="velteplass">
-            <label for="underskog">Underskog</label>
-            <input type="text" name="underskog">
-            <label for="sortiment">Antall sortiment:</label>
-            <input type="text" name="sortiment">
-        </div>
-        <div class="sted">
-            <h2>Nannestad</h2>
-            <label for="m3">m3/daa:</label>
-            <input type="text" name="m3">
-            <label for="overflate">Overflate:</label>
-            <input type="text" name="overflate">
-            <label for="velteplass">Velteplass</label>
-            <input type="text" name="velteplass">
-            <label for="underskog">Underskog</label>
-            <input type="text" name="underskog">
-            <label for="sortiment">Antall sortiment:</label>
-            <input type="text" name="sortiment">
-        </div>
-        <div class="sted">
-            <h2>Nannestad</h2>
-            <label for="m3">m3/daa:</label>
-            <input type="text" name="m3">
-            <label for="overflate">Overflate:</label>
-            <input type="text" name="overflate">
-            <label for="velteplass">Velteplass</label>
-            <input type="text" name="velteplass">
-            <label for="underskog">Underskog</label>
-            <input type="text" name="underskog">
-            <label for="sortiment">Antall sortiment:</label>
-            <input type="text" name="sortiment">
-        </div>
-    </div>
+        
     <button class="oppdater">Oppdater</button>
     
     <script src="index.js"></script>
