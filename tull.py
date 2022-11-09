@@ -1,31 +1,57 @@
-#create an array with 9 stars
-stars = []
-for i in range(9):
-    stars.append('*')
-# print the array in a 3x3 grid
-for i in range(3):
-    for j in range(3):
-        print(stars[3*i+j], end=' ')
-    print()
+"""
+#print what time it is
+import time
+print("Klokka er: ")
+print (time.strftime("%H:%M:%S"))
 
-while True:
-    # get user input
-    print('Enter a number between 1 and 9')
-    turn = 1
-    num = int(input())
-    if num <= 1:
-        turn+=1
-    #replace the star with the number
-    if turn % 2 == 1:
-        stars[num-1] = 'X'
+#calculate the time until work is over
+import datetime
+now = datetime.datetime.now()
+end = datetime.datetime(2022, 11, 7, 15, 50, 00)
+diff = end - now
+print("Tid til arbeidsdagen er over: ")
+print (diff)
+
+
+import random
+randnum = random.randint(1,100)
+
+#ask for a number
+guess = int(input("Gjett et tall mellom 1 og 100: "))
+
+#check if the number is higher or lower than the random number
+while guess != randnum:
+    if guess > randnum:
+        print("Tallet er lavere")
+        guess = int(input("Gjett et tall mellom 1 og 100: "))
+    elif guess < randnum:
+        print("Tallet er høyere")
+        guess = int(input("Gjett et tall mellom 1 og 100: "))
     else:
-        stars[num-1] = 'O'
-        turn += 1
-    # print the array in a 3x3 grid
-    for i in range(3):
-        for j in range(3):
-            print(stars[3*i+j], end=' ')
-        print()
-    if num == 0:
+        print("Du gjettet riktig!")
         break
+"""
+
+
+from tkinter import *
+
+root = Tk()
+root.title("Tull")
+root.geometry("300x300")
+canvas = Canvas(root, width=300, height=300, bg="white")
+
+
+#when mouse is clicked draw a circle
+def click(event):
+    x = event.x
+    y = event.y
+    print("x: ", x, "y: ", y)
+    canvas.create_oval(x-5, y-5, x+5, y+5, fill="black")
+
+
+canvas.bind("<Button-1>", click)
+
+#display the window
+canvas.pack()
+root.mainloop()
 
