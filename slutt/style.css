@@ -1,0 +1,9 @@
+form{
+    display: grid;
+    grid-template-columns: 10rem 15rem /*3rem*/;
+    column-gap: 0.5rem;
+}
+/* edit submit button */
+input[type="submit"]{
+    column-span: all;
+}

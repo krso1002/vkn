@@ -33,20 +33,22 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     echo "Stedsnavn: " . $row["stedsnavn"]. " | " . "Basispris: ". $row["basispris"]. "<br>";
   }
-} 
+}
   else {
     echo "0 results";
 }
 
-$conn->close();
+echo "whaddup?";
 
 ?>
 
 <form action="" method="post">
   <select name="var1" id="">
-    <?php while($row = $result->fetch_assoc()) {
-      echo "<option value='1'>" . $row["stedsnavn"] . "</select>";
-    }?>
+    <?php
+      while($row1 = $result->mysqli_fetch_array($result)):;?> 
+        <option> <?php echo $row1[1]?> </option>
+      <?php endwhile; ?>
+    ?>
   </select>
   <select name="var2" id="">
     <option value="2">2</option>
