@@ -19,7 +19,7 @@ $result3 = mysqli_query($connect, $query3);
 $result4 = mysqli_query($connect, $query4);
 $result5 = mysqli_query($connect, $query5);
 
-echo "pikk ";
+
 
 ?>
 <html lang="en">
@@ -70,12 +70,13 @@ echo "pikk ";
         </select>
         <label for="velteplass">Velteplass</label>
         <select name="velteplass" id="velteplass">
-            <option value="0">Ingen</option>
             <?php $query4 = "SELECT * FROM `tillegg` WHERE tilleggstype = 'velteplass' AND stedID = '$sted_id'";
             $result4 = mysqli_query($connect, $query4);
             while($row4 = mysqli_fetch_array($result4)):;?>
                 <option value="<?php echo $row4[0] ?>"> <?php echo $row4[2]?> </option>
             <?php endwhile; ?>
+            <option value="0">Tosidig</option>
+        </select>
         <input type="submit" value="Regn ut">
     </form>
     <?php
