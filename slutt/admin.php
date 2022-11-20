@@ -1,3 +1,12 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "vkntest";
+    
+    $connect = mysqli_connect($servername, $username, $password, $dbname);
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +17,8 @@
 </head>
 
 <?php
+
+    echo "Hei";
     $query1 = "SELECT * FROM `steder`";
 
     $result1 = mysqli_query($connect, $query1);
@@ -15,7 +26,7 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "<div class='sted'><h2>" . $row["stedsnavn"] . "</h2>";
+            echo "<div class='sted'><h2>" . $row[1] . "</h2>";
             echo "<p>Basispris</p>
                 input type='text' name='basispris' placeholder='" . $row["basispris"] . "'>";
             echo "<p>middelstamme</p>
